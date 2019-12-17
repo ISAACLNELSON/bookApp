@@ -37,8 +37,9 @@ function getBookInfo(request, response) {
             let bookArray = res.body.items.map(book => {
                 return new Book(book)
             });
+            console.log(bookArray);
 
-            response.render('searches/show', bookArray);
+            response.render('searches/show', {bookArray:bookArray});
         })
 }
 
@@ -58,9 +59,10 @@ function Book(bookObj) {
     this.author = bookObj.volumeInfo.authors[0] || 'no author available';
     // this.url = bookObj.selfLink
     this.url = linkClean(bookObj.selfLink);
-    console.log(this.title);
-    console.log(this.author);
-    console.log(this.url);
+    // console.log(this.title);
+    // console.log(this.author);
+    // console.log(this.url);
+    
 }
 app.use('*', (request, response) => {
     response.status(404).send('page not found');
