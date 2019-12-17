@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+
     <p>hello</p>
+
+  <% arrayOfBooks.forEach(book => { %>
+    <div>
+        <img src=<%= book.placeholderImage %> > 
+        <h3><%= book.title %></h3>
+        <p><%= book.author %></p>
+        <p><%= book.url %></p>
+        <p><%= book.description %></p>
+    </div>
+ <% }) %>
+
 </body>
 </html>
