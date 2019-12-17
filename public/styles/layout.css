@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(194, 194, 194);
+    width: 450px;
+    height: 600px;
+    /* justify-content: center; */
+    align-content: center;
+}
+header {
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: start;
+    padding-left: 13px;
+    width: 450px;
+    align-self: flex-start;
+}
+h2 {
+    color: white;
+    
+}
+section {
+    height: 50px;
+    width: 450px;
+    color: white;
+    background-color: rgb(44, 44, 44);
+    align-self: flex-start;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    align-self: center;
+    /* border: hotpink 1px solid; */
+    height: 300px;
+    width: 400px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
