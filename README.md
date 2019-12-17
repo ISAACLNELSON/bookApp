@@ -10,7 +10,7 @@ BookApp Lab
 Take Code Fellows 301
 
 ## Architecture
-HTML, CSS, JS, SQL, NODEMON, HEROKU, POSTMAN, GIT
+HTML, CSS, SMACSS, JS, NODEMON, HEROKU, POSTMAN, GIT, EJS, SUPERAGENT
 
 ## Change Log
 
@@ -52,9 +52,9 @@ Finish time: 12:12pm
 
 Actual time needed to complete: 1hr
 
-- 12-17-2019 11:47pm - Constructor for Books functional
-- 12-17-2019 12:13pm - Application pushed to master, live on Heroku
-- 12-17-2019 1:35pm - Functional images in constructor
+- 12-17-2019 11:47pm - Constructor for Books functional  
+- 12-17-2019 12:13pm - Application pushed to master, live on Heroku  
+- 12-17-2019 1:35pm - Functional images in constructor  
 
 ## 
 
@@ -86,5 +86,5 @@ Actual time needed to complete: 45min
 
 ## Credits and Collaborations
 
-Isaac Nelson, Brandon Johnson, Peter Cole - Pair Programmed
+Isaac Nelson, Brandon Johnson, Peter Cole - Pair Programmed  
 https://github.com/ISAACLNELSON/bookApp
