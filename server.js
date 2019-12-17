@@ -37,7 +37,7 @@ function getBookInfo(request, response) {
             let bookArray = res.body.items.map(book => {
                 return new Book(book)
             });
-            console.log(bookArray);
+            // console.log(bookArray);
 
             response.render('searches/show', {bookArray:bookArray});
         })
@@ -57,11 +57,14 @@ function linkClean(url) {
 }
 
 function Book(bookObj) {
-    const placeholderImage = `https://i.imgur.com/J5LVHEL.jpg`;
+
+    let placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
     this.title = bookObj.volumeInfo.title || 'no title available';
     this.author = bookObj.volumeInfo.authors[0] || 'no author available';
     // this.url = bookObj.selfLink
     this.url = linkClean(bookObj.selfLink);
+
+    this.image = bookObj.volumeInfo.imageLinks && bookObj.volumeInfo.imageLinks.smallThumbnail ? bookObj.volumeInfo.imageLinks.smallThumbnail : placeholderImage;
     // console.log(this.title);
     // console.log(this.author);
     // console.log(this.url);
