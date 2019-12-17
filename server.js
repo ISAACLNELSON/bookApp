@@ -41,6 +41,9 @@ function getBookInfo(request, response) {
 
             response.render('searches/show', {bookArray:bookArray});
         })
+        .catch( error =>{
+         response.render('pages/error')
+        })
 }
 
 function linkClean(url) {
