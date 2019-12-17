@@ -16,7 +16,7 @@ app.post('/searches', getBookInfo);
 
 app.get('/', getForm);
 
-function getForm(request, response){
+function getForm(request, response) {
     response.render('pages/index');
 }
 
@@ -35,17 +35,32 @@ function getBookInfo(request, response) {
     superagent.get(url)
         .then(res => {
             let bookArray = res.body.items.map(book => {
-                return new Book(book.volumeInfo)
+                return new Book(book)
             });
 
-            response.render('pages/searches/show');
+            response.render('searches/show', bookArray);
         })
 }
 
+function linkClean(url) {
+    let prefix = 'https:';
+    if (url.substr(0, 6) !== 'https:') {
+        url = prefix + url.substr(url.search('//'), url.length);
+        return url;
+    } else {
+        return url;
+    }
+}
 
-function Book(bookObj){
+function Book(bookObj) {
     const placeholderImage = `https://i.imgur.com/J5LVHEL.jpg`;
-    this.title = bookObj.title || 'no title available';
+    this.title = bookObj.volumeInfo.title || 'no title available';
+    this.author = bookObj.volumeInfo.authors[0] || 'no author available';
+    // this.url = bookObj.selfLink
+    this.url = linkClean(bookObj.selfLink);
+    console.log(this.title);
+    console.log(this.author);
+    console.log(this.url);
 }
 app.use('*', (request, response) => {
     response.status(404).send('page not found');
